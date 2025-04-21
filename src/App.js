@@ -1,13 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Men from './pages/Men'
+import Women from './pages/Women'
+import Kids from './pages/Kids'
+import Living from './pages/Living'
+import Beauty from './pages/Beauty'
+import Details from './pages/Details'
 
-function App() {
+const App = () => {
   return (
-   <div>
-    <h1>   Learn React</h1>
-    <h1>   Learn React</h1>
-   </div>
-  );
+    <>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/'>
+      <Route index element={<Home/>}/>
+      <Route path='/men' element={<Men/>}/>
+      <Route path='/women' element={<Women/>}/>
+      <Route path='/kids' element={<Kids/>}/>
+      <Route path='/living' element={<Living/>}/>
+      <Route path='/beauty' element={<Beauty/>}/>
+      <Route path='/details' element={<Details/>}/>
+      </Route>
+    </Routes>
+    </BrowserRouter>
+    </>
+  )
 }
 
-export default App;
+export default App
